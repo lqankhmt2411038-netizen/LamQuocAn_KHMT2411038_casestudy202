@@ -1,0 +1,27 @@
+import 'package:flutter/material.dart';
+
+import '../../models/task.dart';
+import '../../services/task_service.dart';
+import '../../widgets/task_form.dart';
+
+class TaskEditScreen extends StatelessWidget {
+  final Task task;
+  const TaskEditScreen({super.key, required this.task});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Chỉnh sửa công việc')),
+      body: TaskForm(
+        task: task,
+        submitLabel: 'Lưu thay đổi',
+        onSubmit: (payload) async {
+          await TaskService().update(task.id, payload);
+          if (!context.mounted) return;
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Đã lưu thay đổi')));
+          Navigator.pop(context, true);
+        },
+      ),
+    );
+  }
+}
