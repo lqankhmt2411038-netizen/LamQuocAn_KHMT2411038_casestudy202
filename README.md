@@ -3,7 +3,7 @@
 | Thông tin | |
 |---|---|
 | **Họ tên** | Lâm Quốc An |
-| **MSSV** | `<điền MSSV>` |
+| **MSSV** | `KHMT2411038` |
 | **Công nghệ** | Flutter • Node.js/Express REST API • MongoDB • Nodemailer |
 
 ## Cấu trúc repo
@@ -15,5 +15,3 @@ case2_<mssv>_<hoten>/
 └── TaskManager/    # Frontend Flutter
 ```
 
-- Hướng dẫn chạy: xem `HUONG_DAN.md`
-- Backend: `api/README.md`
